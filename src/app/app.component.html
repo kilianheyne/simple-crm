@@ -4,11 +4,11 @@
       space for logo
     </div>
     <ul>
-      <li>
+      <li routerLink="/dashboard" routerLinkActive="active">
         <mat-icon fontIcon="space_dashboard"></mat-icon> 
         Dashboard
       </li>
-      <li>
+      <li routerLink="/user" routerLinkActive="active">
         <mat-icon fontIcon="person"></mat-icon>
         User
       </li>
@@ -20,8 +20,11 @@
       <mat-icon (click)="drawer.toggle()" fontIcon="menu" class="menu-icon"></mat-icon>
       <span>Simple CRM</span>
     </mat-toolbar>
+    <div class="router-container">
+      <router-outlet />
+    </div>
   </div>
 </mat-drawer-container>
 
 
-<router-outlet />
+
