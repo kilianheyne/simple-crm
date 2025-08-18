@@ -1,5 +1,15 @@
-<mat-toolbar>
-  <span>Simple CRM</span>
-</mat-toolbar>
+<mat-drawer-container class="mat-drawer-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar>
+      <mat-icon (click)="drawer.toggle()" fontIcon="menu" class="menu-icon"></mat-icon>
+      <span>Simple CRM</span>
+    </mat-toolbar>
+  </div>
+</mat-drawer-container>
+
 
 <router-outlet />
