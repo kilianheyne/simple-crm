@@ -1,12 +1,57 @@
 .mat-drawer-container {
     height: 100dvh;
     background: white;
+
+    .sidenav {
+        background: white;
+        width: 30%;
+        color: black;
+
+        .logo-container {
+            min-height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 16px;
+            border-bottom: 1px solid lightgrey
+        }
+    
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 0;
+        
+            li {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                padding: 0 32px;
+                cursor: pointer;
+        
+                &:hover {
+                    background: grey;
+                }
+            }
+        }
+    }
+
+    mat-toolbar {
+        min-height: 56px;
+        height: 56px;
+
+        .menu-icon {
+            cursor: pointer;
+        }
+    }
 }
 
-.sidenav {
-    background: white;
-}
 
-.menu-icon {
-    cursor: pointer;
-}
+
+
+
+
+
+
+
