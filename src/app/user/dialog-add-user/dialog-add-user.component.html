@@ -2,6 +2,52 @@
 <mat-dialog-content>
     Whom would you like to add to your user-list?
 </mat-dialog-content>
+<div class="form-container">
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Insert First name here">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Insert Last name here">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Birth Date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Street</mat-label>
+            <input matInput placeholder="Insert street name here">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>House Number</mat-label>
+            <input matInput placeholder="Insert house number here">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Zip code</mat-label>
+            <input matInput placeholder="Insert zip code here">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Insert city name here">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+    </div>
+</div>
+
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>cancel</button>
     <button mat-button mat-dialog-close cdkFocusInitial>save</button>
