@@ -1,3 +1,14 @@
+table {
+    padding: 16px;
+
+    th {
+        color: rgba(0, 0, 0, 0.4);
+        text-align: start;
+    }
+}
+
+
+
 .person-add-btn {
     position: absolute;
     bottom: 64px;
