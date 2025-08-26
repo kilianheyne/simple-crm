@@ -1,13 +1,47 @@
-table {
-    padding: 16px;
+mat-card {
+    background: white;
 
-    th {
-        color: rgba(0, 0, 0, 0.4);
-        text-align: start;
+    table {
+        border-collapse: collapse;
+
+        tr {
+            border-bottom: 1px solid lightgrey;
+            height: 56px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #d6e2ff;
+
+                &:first-child {
+                    background-color: unset;
+                    cursor: unset;
+                }
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            th {
+                color: rgba(0, 0, 0, 0.4);
+                text-align: start;
+
+                &:first-child {
+                    padding-left: 16px;
+                }
+            }
+
+            td {
+
+                &:first-child {
+                    padding-left: 16px;
+                }
+            }
+        }
+    
+
     }
 }
-
-
 
 .person-add-btn {
     position: absolute;
