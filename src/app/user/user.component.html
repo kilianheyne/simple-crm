@@ -8,21 +8,13 @@
                 <th>Address</th>
                 <th>City</th>
             </tr>
-            <tr>
-                <td>Name</td>
-                <td>Address</td>
-                <td>City</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Address</td>
-                <td>City</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Address</td>
-                <td>City</td>
-            </tr>
+            @for (item of users$ | async; track $index) {
+                <tr>
+                    <td>{{item.lastName}}, {{item.firstName}}</td>
+                    <td>{{item.street}} {{item.houseNumber}}</td>
+                    <td>{{item.city}}</td>
+                </tr>
+            }
         </table>
     </mat-card>
 </div>
