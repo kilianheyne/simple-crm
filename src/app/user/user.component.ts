@@ -25,7 +25,11 @@ export class UserComponent {
 
   ngOnInit():void {
     const userCollection = collection(this.firestore, 'users');
-    this.users$ = collectionData(userCollection, { idField: 'id'}) as Observable<User[]>;
+    this.users$ = collectionData(userCollection, { idField: 'id' }) as Observable<User[]>;
+
+    this.users$.subscribe(users => {
+      console.log('Alle User mit der ID:', JSON.stringify(users, null, 2));
+    });
   }
 
   openDialog() {
