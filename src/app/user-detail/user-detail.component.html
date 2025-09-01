@@ -1,18 +1,20 @@
-<mat-card class="user-detail-header">
-    <div>
-        <img src="assets/images/user-avatar.png" alt="">
+@if (user$ | async; as user) {
+    <mat-card class="user-detail-header">
         <div>
-            <h3>Name der Person</h3>
-            <span>E-Mail der Person</span>
+            <img src="assets/images/user-avatar.png" alt="">
+            <div>
+                <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+                <span>{{ user.email }}</span>
+            </div>
         </div>
-    </div>
-</mat-card>
-<mat-card class="user-detail-address">
-    <mat-card-content>
-        <mat-card-title>Address</mat-card-title>
-        <div class="flex-col">
-            <span>Straße & Hausnummer</span>
-            <span>PLZ & Stadt</span>
-        </div>
-    </mat-card-content>
-</mat-card>
+    </mat-card>
+    <mat-card class="user-detail-address">
+        <mat-card-content>
+            <mat-card-title>Address</mat-card-title>
+            <div class="flex-col">
+                <span>{{ user.street }} {{ user.houseNumber }}</span>
+                <span>{{ user.zipCode }} {{ user.city }}</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+}
