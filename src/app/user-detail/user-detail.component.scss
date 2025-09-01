@@ -27,3 +27,18 @@
         }
     }
 }
+
+.user-detail-address {
+    margin-top: 32px;
+
+    mat-card-content {
+        mat-card-title {
+            margin-bottom: 8px;
+        }
+
+        >div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
