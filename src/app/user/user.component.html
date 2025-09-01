@@ -1,5 +1,3 @@
-<p>user works!</p>
-
 <div>
     <mat-card>
         <table>
@@ -9,7 +7,7 @@
                 <th>City</th>
             </tr>
             @for (item of users$ | async; track $index) {
-                <tr>
+                <tr [routerLink]="['/user', item.id]">
                     <td>{{item.lastName}}, {{item.firstName}}</td>
                     <td>{{item.street}} {{item.houseNumber}}</td>
                     <td>{{item.city}}</td>

@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { UserService } from '../services/user.service';
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { RouterLink, RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-user',
@@ -20,7 +21,9 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
     MatDialogModule,
     MatCardModule,
     AsyncPipe,
-  ],
+    RouterLink,
+    RouterModule
+],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
 })
