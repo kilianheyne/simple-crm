@@ -1,0 +1,29 @@
+.user-detail-header {
+    min-height: 300px;
+    background: #1a2b6d;
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+
+    >div {
+        display: flex;
+        gap: 16px;
+
+        >img {
+            max-height: 100px;
+            object-fit: cover;
+        }
+
+        >div {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            >h3 {
+                margin: 0;
+                font-size: 48px;
+            }
+        }
+    }
+}

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { MatCard } from "@angular/material/card";
 
 @Component({
   selector: 'app-user-detail',
-  imports: [],
+  imports: [MatCard],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
 })
