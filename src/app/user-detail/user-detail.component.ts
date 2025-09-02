@@ -9,6 +9,9 @@ import { AsyncPipe } from '@angular/common';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from '@angular/material/menu';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-detail',
@@ -23,6 +26,7 @@ export class UserDetailComponent {
   private destroyRef = inject(DestroyRef);
   user$!: Observable<User | undefined>;
   private userService = inject(UserService)
+  readonly dialog = inject(MatDialog);
 
   ngOnInit(): void {
     this.route.paramMap
@@ -34,11 +38,11 @@ export class UserDetailComponent {
   }
 
   openAddressEdit():void {
-
+    this.dialog.open(DialogEditAddressComponent);
   }
 
   openUserEdit(): void {
-
+    this.dialog.open(DialogEditUserComponent);
   }
 
 }

@@ -1,8 +1,8 @@
 @if (user$ | async; as user) {
     <mat-card class="user-detail-header">
-        <button mat-icon-button [matMenuTriggerFor]="addressMenu" class="dropdown-btn">
+        <button mat-icon-button [matMenuTriggerFor]="userMenu" class="dropdown-btn">
             <mat-icon>more_vert</mat-icon>
-            <mat-menu #addressMenu="matMenu">
+            <mat-menu #userMenu="matMenu">
                 <button mat-menu-item (click)="openUserEdit()">
                     <mat-icon>edit</mat-icon>
                     <span>Edit</span>
