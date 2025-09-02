@@ -10,6 +10,9 @@
     </mat-card>
     <mat-card class="user-detail-address">
         <mat-card-content>
+            <button mat-icon-button class="dropdown-btn" (click)="openAddressDialog()">
+                <mat-icon>more_vert</mat-icon>
+            </button>
             <mat-card-title>Address</mat-card-title>
             <div class="flex-col">
                 <span>{{ user.street }} {{ user.houseNumber }}</span>
@@ -17,4 +20,6 @@
             </div>
         </mat-card-content>
     </mat-card>
+} @else {
+    <p>❌ User does not exist or could not be loaded.</p>
 }

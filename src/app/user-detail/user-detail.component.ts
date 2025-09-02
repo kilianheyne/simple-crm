@@ -6,10 +6,12 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user.class';
 import { UserService } from '../services/user.service';
 import { AsyncPipe } from '@angular/common';
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
   selector: 'app-user-detail',
-  imports: [MatCard, MatCardModule, AsyncPipe],
+  imports: [MatCard, MatCardModule, AsyncPipe, MatButtonModule, MatIconModule],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
 })
@@ -30,6 +32,8 @@ export class UserDetailComponent {
       });
   }
 
-
+  openAddressDialog():void {
+    
+  }
 
 }
