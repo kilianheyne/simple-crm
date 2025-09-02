@@ -1,5 +1,14 @@
 @if (user$ | async; as user) {
     <mat-card class="user-detail-header">
+        <button mat-icon-button [matMenuTriggerFor]="addressMenu" class="dropdown-btn">
+            <mat-icon>more_vert</mat-icon>
+            <mat-menu #addressMenu="matMenu">
+                <button mat-menu-item (click)="openUserEdit()">
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit</span>
+                </button>
+            </mat-menu>
+        </button>
         <div>
             <img src="assets/images/user-avatar.png" alt="">
             <div>
@@ -10,9 +19,16 @@
     </mat-card>
     <mat-card class="user-detail-address">
         <mat-card-content>
-            <button mat-icon-button class="dropdown-btn" (click)="openAddressDialog()">
+            <button mat-icon-button [matMenuTriggerFor]="addressMenu" class="dropdown-btn">
                 <mat-icon>more_vert</mat-icon>
+                <mat-menu #addressMenu="matMenu">
+                    <button mat-menu-item (click)="openAddressEdit()">
+                        <mat-icon>edit</mat-icon>
+                        <span>Edit</span>
+                    </button>
+                </mat-menu>
             </button>
+            
             <mat-card-title>Address</mat-card-title>
             <div class="flex-col">
                 <span>{{ user.street }} {{ user.houseNumber }}</span>

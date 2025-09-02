@@ -8,10 +8,11 @@ import { UserService } from '../services/user.service';
 import { AsyncPipe } from '@angular/common';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-user-detail',
-  imports: [MatCard, MatCardModule, AsyncPipe, MatButtonModule, MatIconModule],
+  imports: [MatCard, MatCardModule, AsyncPipe, MatButtonModule, MatIconModule, MatMenuModule],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
 })
@@ -32,8 +33,12 @@ export class UserDetailComponent {
       });
   }
 
-  openAddressDialog():void {
-    
+  openAddressEdit():void {
+
+  }
+
+  openUserEdit(): void {
+
   }
 
 }
