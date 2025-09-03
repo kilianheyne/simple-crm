@@ -47,12 +47,14 @@ export class UserDetailComponent {
 
   openAddressEdit():void {
     if (!this.currentUser) return;
-    const dialogRef = this.dialog.open(DialogEditAddressComponent);
-    dialogRef.componentInstance.newUser = this.currentUser;
+    const addressDialogRef = this.dialog.open(DialogEditAddressComponent);
+    addressDialogRef.componentInstance.newUser = this.currentUser;
   }
 
   openUserEdit(): void {
-    this.dialog.open(DialogEditUserComponent);
+    if (!this.currentUser) return;
+    const userDialogRef = this.dialog.open(DialogEditUserComponent);
+    userDialogRef.componentInstance.setUser(this.currentUser);
   }
 
 }

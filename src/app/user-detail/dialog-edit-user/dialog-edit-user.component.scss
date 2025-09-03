@@ -1,0 +1,17 @@
+
+.form-container {
+    padding: 16px;
+
+    .full-width {
+        width: 100%;
+    }
+
+    .three-quarter-width {
+        width: 90%;
+    }
+
+    .form-gap {
+        display: flex;
+        gap: 16px;
+    }
+}

@@ -1,1 +1,69 @@
-<p>dialog-edit-user works!</p>
+<section>
+    @if (isLoading) {
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    }
+    <h2 mat-dialog-title>Adding a user:</h2>
+    <mat-dialog-content>
+        Whom would you like to add to your user-list?
+    </mat-dialog-content>
+    <div class="form-container">
+        <div class="form-gap">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input 
+                    matInput 
+                    placeholder="Insert First name here" 
+                    [(ngModel)]="newUser.firstName"
+                    [disabled]="isLoading">
+                <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input 
+                    matInput 
+                    placeholder="Insert Last name here" 
+                    [(ngModel)]="newUser.lastName"
+                    [disabled]="isLoading">
+                <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>E-Mail</mat-label>
+            <input 
+                matInput
+                placeholder="Inser your email"
+                [(ngModel)]="newUser.email"
+                [disabled]="isLoading">
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Birth Date</mat-label>
+            <input 
+                matInput 
+                [matDatepicker]="picker"
+                [(ngModel)]="birthDate"
+                [disabled]="isLoading">
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <mat-dialog-actions>
+        <button 
+            mat-button 
+            mat-dialog-close
+            >
+                cancel
+        </button>
+        <button 
+            mat-button 
+            mat-dialog-close 
+            cdkFocusInitial
+            [disabled]="isLoading"
+            >
+                save
+        </button>
+    </mat-dialog-actions>
+</section>
+
