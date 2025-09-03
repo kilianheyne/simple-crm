@@ -27,6 +27,7 @@ export class UserDetailComponent {
   user$!: Observable<User | undefined>;
   private userService = inject(UserService)
   readonly dialog = inject(MatDialog);
+  currentUser!: User;
 
   ngOnInit(): void {
     this.route.paramMap
@@ -34,11 +35,20 @@ export class UserDetailComponent {
       .subscribe(params => {
         this.userId = params.get('id')!;
         this.user$ = this.userService.getUserById(this.userId);
+        this.user$
+          .pipe(takeUntilDestroyed(this.destroyRef))
+          .subscribe(user => {
+            if (user) {
+              this.currentUser = user;
+            }
+          });
       });
   }
 
   openAddressEdit():void {
-    this.dialog.open(DialogEditAddressComponent);
+    if (!this.currentUser) return;
+    const dialogRef = this.dialog.open(DialogEditAddressComponent);
+    dialogRef.componentInstance.newUser = this.currentUser;
   }
 
   openUserEdit(): void {
