@@ -49,12 +49,14 @@ export class UserDetailComponent {
     if (!this.currentUser) return;
     const addressDialogRef = this.dialog.open(DialogEditAddressComponent);
     addressDialogRef.componentInstance.newUser = this.currentUser;
+    addressDialogRef.componentInstance.userId = this.userId;
   }
 
   openUserEdit(): void {
     if (!this.currentUser) return;
     const userDialogRef = this.dialog.open(DialogEditUserComponent);
     userDialogRef.componentInstance.setUser(this.currentUser);
+    userDialogRef.componentInstance.userId = this.userId;
   }
 
 }
